@@ -146,6 +146,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   position:fixed; top:0; left:0; right:0; z-index:200;
   height:80px;
   border-bottom:0.5px solid rgba(232,233,231,0.55);
+  box-shadow:0 8px 24px rgba(34,30,27,0.16);
   transition:background var(--motion-ui) var(--ease-aligned), border-color var(--motion-ui) var(--ease-aligned);
 }
 .site-header__inner{
@@ -156,7 +157,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   display:flex; align-items:center; justify-content:space-between;
 }
 .site-header__logo{
-  font-family:var(--font-serif); font-weight:500; font-size:32px; line-height:1;
+  font-family:var(--font-serif); font-weight:400; font-size:32px; line-height:1;
   letter-spacing:-0.16px; color:var(--text-inverse);
   transition:color var(--motion-ui) var(--ease-aligned);
 }
@@ -316,7 +317,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .hiw-diagram__avatar{ width:72px; height:72px; border-radius:50%; display:flex; align-items:center; justify-content:center; overflow:hidden; }
 .hiw-diagram__avatar--icon{ background:var(--surface-brand-subtle); }
 .hiw-diagram__avatar--icon img{ width:32px; height:32px; }
-.hiw-diagram__avatar--brand{ width:52px; height:52px; background:var(--surface-brand); color:var(--text-inverse); font-family:var(--font-serif); font-weight:500; font-size:41.5px; align-self:center; }
+.hiw-diagram__avatar--brand{ width:52px; height:52px; background:var(--surface-brand); color:var(--text-inverse); font-family:var(--font-serif); font-weight:400; font-size:41.5px; align-self:center; }
 .hiw-diagram__avatar--photo img{ width:100%; height:100%; object-fit:cover; }
 .hiw-diagram__label{ font-family:var(--font-sans); font-size:18px; line-height:24px; color:var(--text-secondary); }
 .hiw-diagram__connector{ width:72px; height:1px; background:var(--border-default); align-self:center; margin-top:-24px; transform-origin:left center; }
@@ -596,7 +597,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .site-footer{ background:var(--surface-brand-deep); padding:64px var(--section-x) 48px; display:flex; flex-direction:column; gap:32px; }
 .site-footer__main{ display:flex; gap:64px; max-width:var(--content-w); margin:0 auto; width:100%; }
 .site-footer__brand{ flex:1.4; display:flex; flex-direction:column; gap:16px; max-width:400px; }
-.site-footer__logo{ font-family:var(--font-serif); font-weight:500; font-size:32px; line-height:33px; letter-spacing:-0.16px; color:var(--text-inverse); }
+.site-footer__logo{ font-family:var(--font-serif); font-weight:400; font-size:32px; line-height:33px; letter-spacing:-0.16px; color:var(--text-inverse); }
 .site-footer__tag{ color:var(--text-inverse-secondary); opacity:.7; }
 .site-footer__disclaimer{ color:var(--text-inverse-tertiary); }
 .site-footer__links{ flex:2.6; display:flex; gap:64px; }
