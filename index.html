@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aligned Therapy — Find the Right Therapist For You</title>
+<!--
+  Rebuilt from live Figma design context (file M3mQQjN8n7MAiefgAzo6fX, section
+  "Latest Home page", frame "Home / Desktop / Oxide & Flint v1", node 1285:26864).
+  Colours, spacing and typography are pulled from the file's "Current" variable
+  collection and Text Styles catalog rather than any static token list, since the
+  live file is the most current source. FAQ answer copy is the one exception:
+  the FAQ questions are verified verbatim against Figma, but the answers were
+  collapsed in the Figma accordions and not retrievable via read-only tooling —
+  reused from prior known site copy pending a follow-up verification pass.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" type="button">
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <a class="site-header__logo" href="#hero">Aligned Therapy</a>
+    <span class="site-header__spacer" aria-hidden="true"></span>
+  </div>
+</header>
+
+<div class="nav-scrim" id="navScrim" hidden></div>
+
+<nav class="nav-menu" id="navMenu" aria-label="Primary" aria-hidden="true">
+  <div class="nav-menu__body">
+    <ul class="nav-menu__primary">
+      <li><a class="nav-menu__primary-link nav-menu__primary-link--accent" href="#hero">Find a therapist</a></li>
+      <li><a class="nav-menu__primary-link" href="#how-it-works">How it works</a></li>
+      <li><a class="nav-menu__primary-link" href="#evidence">What is therapy?</a></li>
+      <li><a class="nav-menu__primary-link" href="#practical">About Aligned</a></li>
+    </ul>
+    <div class="nav-menu__divider"></div>
+    <div class="nav-menu__secondary">
+      <div class="nav-menu__group">
+        <p class="nav-menu__group-label">Therapy by region</p>
+        <a href="#">Bristol</a>
+        <a href="#">Oxford &amp; Oxfordshire</a>
+        <a href="#">Online</a>
+      </div>
+      <div class="nav-menu__group">
+        <p class="nav-menu__group-label">Help &amp; contact</p>
+        <a href="#faq">Client FAQs</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div class="nav-menu__group">
+        <p class="nav-menu__group-label">For therapists</p>
+        <a href="#">Therapist sign-up</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <div class="page">
+
+    <!-- ================= HERO ================= -->
+    <section class="section hero" id="hero">
+      <div class="hero__image" aria-hidden="true">
+        <img src="assets/hero-photo.jpg" alt="">
+        <div class="hero__scrim"></div>
+      </div>
+      <div class="hero__spacer" aria-hidden="true"></div>
+      <div class="hero__content">
+        <div class="hero__heading" data-load="1">
+          <h1 class="type-display-hero hero__title">Find the right therapist for you.</h1>
+        </div>
+        <p class="type-body-lead hero__lede" data-load="2">Tell us what you're looking for. A matching expert will review vetted therapists and recommend the person we think fits you best.</p>
+        <div class="hero__actions-wrap">
+          <div class="hero__actions" data-load="3">
+            <a class="btn btn--primary" href="#cta">Find my therapist</a>
+            <p class="type-body-default hero__actions-note">It's free, confidential and fast</p>
+          </div>
+          <p class="type-body-small hero__meta" data-load="4">In person in Bristol and Oxford, or online across the UK&nbsp;&nbsp;·&nbsp;&nbsp;Every therapist is UK-accredited</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section how-it-works" id="how-it-works">
+      <div class="how-it-works__intro">
+        <h2 class="type-heading-section how-it-works__heading" data-reveal>Aligned finds you the right therapist, based on your unique needs.</h2>
+      </div>
+
+      <div class="hiw-pin" id="hiwPin" style="height: calc(var(--hiw-module-h) + var(--hiw-scroll-distance));">
+        <div class="hiw-sticky">
+          <div class="hiw-row">
+
+            <!-- Copy sits on the left for steps 01 / 03 and the right for step 02, matching Figma -->
+            <div class="hiw-copy-slot hiw-copy-slot--left" id="hiwCopyLeft">
+              <div class="hiw-copy__step" data-step="0">
+                <p class="hiw-copy__kicker"><span class="hiw-copy__num">01</span> Tell us what's going on.</p>
+                <p class="type-body-default hiw-copy__desc">Chat with Ally for 10–15 minutes about what's going on and what you need.</p>
+              </div>
+              <div class="hiw-copy__step" data-step="2">
+                <p class="hiw-copy__kicker"><span class="hiw-copy__num">03</span> Confirm and begin therapy.</p>
+                <p class="type-body-default hiw-copy__desc">Meet your match, see why we chose them, and decide if you'd like an introduction.</p>
+              </div>
+            </div>
+
+            <div class="hiw-visual">
+              <div class="hiw-cards" id="hiwCards">
+
+                <!-- Card 01 (active at rest) — Ally chat -->
+                <div class="hiw-card hiw-card--chat" data-card="0">
+                  <div class="hiw-chat">
+                    <div class="hiw-chat__header">
+                      <p class="hiw-chat__who">Ally</p>
+                      <p class="hiw-chat__role">Matching assistant</p>
+                    </div>
+                    <div class="hiw-chat__thread">
+                      <div class="hiw-chat__bubble hiw-chat__bubble--ally">What would you most like to feel different in a few months' time?</div>
+                      <div class="hiw-chat__bubble hiw-chat__bubble--user">I'd like to stop feeling anxious</div>
+                      <div class="hiw-chat__bubble hiw-chat__bubble--ally">And when you've tried to talk about it before, what tends not to work for you?</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="hiw-card hiw-card--review" data-card="1">
+                  <div class="hiw-review">
+                    <p class="hiw-review__title">Your match</p>
+                    <div class="hiw-review__bestfit">
+                      <div class="hiw-review__avatar"><img src="assets/yasmin.jpg" alt="Yasmin"></div>
+                      <div class="hiw-review__who">
+                        <p class="hiw-review__name">Yasmin</p>
+                        <p class="hiw-review__meta">Psychotherapist · BACP accredited · 15 years<br>Bedminster · In person or online · £80/session</p>
+                      </div>
+                    </div>
+                    <div class="hiw-review__why">
+                      <p class="hiw-review__why-label">Why we chose Yasmin</p>
+                      <p class="hiw-review__why-copy">You told us you want someone specialised in anxiety, with a practical approach and who is warm.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 03 — connection sequence plays once it becomes active -->
+                <div class="hiw-card hiw-card--diagram" data-card="2" id="hiwDiagramCard">
+                  <p class="hiw-card__eyebrow">Introduction sent</p>
+                  <div class="hiw-diagram">
+                    <div class="hiw-diagram__party" data-diagram-el="you">
+                      <div class="hiw-diagram__avatar hiw-diagram__avatar--icon">
+                        <img src="assets/icon-user.svg" alt="" width="20" height="20">
+                      </div>
+                      <p class="hiw-diagram__label">You</p>
+                    </div>
+                    <div class="hiw-diagram__connector" data-diagram-el="connector1"></div>
+                    <div class="hiw-diagram__party" data-diagram-el="aligned">
+                      <div class="hiw-diagram__avatar hiw-diagram__avatar--brand">A</div>
+                      <p class="hiw-diagram__label">Aligned</p>
+                    </div>
+                    <div class="hiw-diagram__connector" data-diagram-el="connector2"></div>
+                    <div class="hiw-diagram__party" data-diagram-el="therapist">
+                      <div class="hiw-diagram__avatar hiw-diagram__avatar--photo">
+                        <img src="assets/yasmin.jpg" alt="Yasmin">
+                      </div>
+                      <p class="hiw-diagram__label">Yasmin</p>
+                    </div>
+                  </div>
+                  <p class="hiw-card__confirmation" data-diagram-el="confirmation">You're now connected. We've introduced you both by email.</p>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="hiw-copy-slot hiw-copy-slot--right" id="hiwCopyRight">
+              <div class="hiw-copy__step" data-step="1">
+                <p class="hiw-copy__kicker"><span class="hiw-copy__num">02</span> We find you a great match.</p>
+                <p class="type-body-default hiw-copy__desc">A matching specialist reviews your needs and chooses the therapist we think fits best.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS / EXPERT PROOF ================= -->
+    <section class="section stats" id="evidence">
+      <div class="stats__top">
+        <div class="stats__intro" data-reveal>
+          <h2 class="type-display-cta stats__heading">The connection with your therapist matters.</h2>
+          <p class="type-body-lead stats__copy">Research shows the connection you feel with your therapist can be one of the biggest predictors of progress.</p>
+        </div>
+        <div class="stats__cards">
+          <div class="stats__card stats__card--stat" data-stat-card>
+            <p class="type-stats stats__number" data-stat-number>88%</p>
+            <p class="type-body-lead stats__caption">of clients who feel a strong connection by session three go on to see real progress.</p>
+            <p class="type-body-small stats__sources">Sources: Lambert, 1992; Wampold &amp; Imel, 2015; Flückiger et al., 2018, Norcross &amp; Lambert, 2019</p>
+          </div>
+          <div class="stats__card stats__card--chart" data-chart-card>
+            <p class="type-body-lead stats__caption">Clients who use Aligned stay in therapy with their matched therapist more than elsewhere.</p>
+            <div class="growth-chart" data-growth-chart>
+              <div class="growth-chart__bars">
+                <div class="growth-chart__bar-col">
+                  <p class="growth-chart__value">35</p>
+                  <div class="growth-chart__bar growth-chart__bar--direct" data-bar style="--bar-h: 68px;"></div>
+                </div>
+                <div class="growth-chart__bar-col">
+                  <p class="growth-chart__value">56</p>
+                  <div class="growth-chart__bar growth-chart__bar--others" data-bar style="--bar-h: 108px;"></div>
+                </div>
+                <div class="growth-chart__bar-col">
+                  <p class="growth-chart__value growth-chart__value--brand">76</p>
+                  <div class="growth-chart__bar growth-chart__bar--aligned" data-bar style="--bar-h: 152px;"></div>
+                </div>
+              </div>
+              <div class="growth-chart__labels">
+                <span>Direct</span>
+                <span>Others</span>
+                <span class="growth-chart__label--brand">Aligned</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats__quote-wrap">
+      <div class="stats__quote" data-reveal>
+        <div class="stats__quote-photo"><img src="assets/evidence-photo.jpg" alt=""></div>
+        <div class="stats__quote-body">
+          <div class="stats__quote-text">
+            <span class="stats__quote-mark">&ldquo;</span>
+            <p class="type-heading-editorial">Establishing a strong connection with your therapist is one of the biggest predictors of reaching positive outcomes.</p>
+          </div>
+          <div class="stats__quote-attribution">
+            <div>
+              <p class="type-body-default stats__quote-name">Dr. Heather Bolton</p>
+              <p class="type-body-small stats__quote-role">Clinical director at Aligned Therapy</p>
+            </div>
+            <a class="link-arrow" href="#">Read more <img src="assets/icon-arrow-right.svg" alt="" width="18" height="18"></a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ================= NOT YOUR STANDARD MATCHING SERVICE ================= -->
+    <section class="section comparison">
+      <h2 class="type-heading-section comparison__heading" data-reveal>Finding a therapist shouldn't feel like browsing a directory.</h2>
+
+      <div class="comparison__table" data-reveal>
+        <p class="comparison__typical-heading">Platforms and directories</p>
+
+        <div class="comparison__row" style="top:174px;">
+          <p class="comparison__row-label">Matching process</p>
+          <span class="comparison__mark"><img src="assets/icon-x.svg" alt="No" width="12" height="12"></span>
+          <p class="comparison__row-value">Algorithm-led or self-serve</p>
+        </div>
+        <div class="comparison__divider" style="top:236px;"></div>
+
+        <div class="comparison__row" style="top:252px;">
+          <p class="comparison__row-label">Therapist credentials</p>
+          <span class="comparison__mark"><img src="assets/icon-x.svg" alt="No" width="12" height="12"></span>
+          <p class="comparison__row-value">Checks and credentials vary</p>
+        </div>
+        <div class="comparison__divider" style="top:314px;"></div>
+
+        <div class="comparison__row" style="top:330px;">
+          <p class="comparison__row-label">Wait times</p>
+          <span class="comparison__mark"><img src="assets/icon-x.svg" alt="No" width="12" height="12"></span>
+          <p class="comparison__row-value">Often several days to a week</p>
+        </div>
+        <div class="comparison__divider" style="top:392px;"></div>
+
+        <div class="comparison__row" style="top:408px;">
+          <p class="comparison__row-label">Client fees</p>
+          <span class="comparison__mark"><img src="assets/icon-x.svg" alt="No" width="12" height="12"></span>
+          <p class="comparison__row-value">Subscription or platform fees may apply</p>
+        </div>
+        <div class="comparison__divider" style="top:470px;"></div>
+
+        <div class="comparison__row" style="top:486px;">
+          <p class="comparison__row-label">Availability</p>
+          <span class="comparison__mark"><img src="assets/icon-x.svg" alt="No" width="12" height="12"></span>
+          <p class="comparison__row-value">Availability often unclear until you enquire</p>
+        </div>
+
+        <div class="comparison__aligned-col">
+          <p class="comparison__aligned-heading">Aligned</p>
+          <div class="comparison__aligned-row">
+            <span class="comparison__mark"><img src="assets/icon-x.svg" alt="No" width="12" height="12"></span>
+            <p class="comparison__aligned-value">Human-reviewed, personalised matching</p>
+          </div>
+          <div class="comparison__aligned-row">
+            <span class="comparison__mark comparison__mark--yes"><img src="assets/icon-check.svg" alt="Yes" width="12" height="12"></span>
+            <p class="comparison__aligned-value">Verified BACP / UKCP / BABCP accreditation</p>
+          </div>
+          <div class="comparison__aligned-row">
+            <span class="comparison__mark comparison__mark--yes"><img src="assets/icon-check.svg" alt="Yes" width="12" height="12"></span>
+            <p class="comparison__aligned-value">Match within 24 hours</p>
+          </div>
+          <div class="comparison__aligned-row">
+            <span class="comparison__mark comparison__mark--yes"><img src="assets/icon-check.svg" alt="Yes" width="12" height="12"></span>
+            <p class="comparison__aligned-value">Free matching; pay therapist directly</p>
+          </div>
+          <div class="comparison__aligned-row">
+            <span class="comparison__mark comparison__mark--yes"><img src="assets/icon-check.svg" alt="Yes" width="12" height="12"></span>
+            <p class="comparison__aligned-value">Only matched to therapists with current availability</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BRISTOL / PRACTICAL FIT ================= -->
+    <section class="section bristol" id="practical">
+      <div class="bristol__header" data-reveal>
+        <h2 class="type-display-hero bristol__heading">Therapy that fits around you.</h2>
+        <p class="type-body-lead bristol__copy">We match you with independent, accredited therapists offering different ways of working, locations and price points.</p>
+      </div>
+
+      <div class="bristol__cards">
+        <div class="bristol__card" data-reveal>
+          <img class="bristol__icon" src="assets/icon-messages-square.svg" alt="" width="40" height="40">
+          <p class="bristol__label">How</p>
+          <ul class="bristol__list">
+            <li><img src="assets/icon-ellipse.svg" alt="" width="7" height="7">In person, online or hybrid</li>
+            <li><img src="assets/icon-ellipse.svg" alt="" width="7" height="7">Individual, couples or family therapy</li>
+            <li><img src="assets/icon-ellipse.svg" alt="" width="7" height="7">Explorative, practical or tools-based</li>
+          </ul>
+        </div>
+        <div class="bristol__card" data-reveal>
+          <img class="bristol__icon" src="assets/icon-map.svg" alt="" width="40" height="40">
+          <p class="bristol__label">Where</p>
+          <ul class="bristol__list">
+            <li><img src="assets/icon-ellipse.svg" alt="" width="7" height="7">Bristol</li>
+            <li><img src="assets/icon-ellipse.svg" alt="" width="7" height="7">Oxford &amp; Oxfordshire</li>
+            <li><img src="assets/icon-ellipse.svg" alt="" width="7" height="7">Online across the UK</li>
+          </ul>
+        </div>
+        <div class="bristol__card" data-reveal>
+          <img class="bristol__icon" src="assets/icon-heart-handshake.svg" alt="" width="40" height="40">
+          <p class="bristol__label">What</p>
+          <ul class="bristol__list">
+            <li><img src="assets/icon-ellipse-alt.svg" alt="" width="7" height="7">Anxiety &amp; stress</li>
+            <li><img src="assets/icon-ellipse-alt.svg" alt="" width="7" height="7">Depression &amp; low mood</li>
+            <li><img src="assets/icon-ellipse-alt.svg" alt="" width="7" height="7">Relationships &amp; trauma</li>
+            <li><img src="assets/icon-ellipse-alt.svg" alt="" width="7" height="7">Work, burnout &amp; life changes</li>
+            <li><img src="assets/icon-ellipse-alt.svg" alt="" width="7" height="7">And more</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEET SOME OF OUR THERAPISTS ================= -->
+    <section class="section therapist">
+     <div class="therapist__inner">
+      <button class="carousel-arrow carousel-arrow--left" type="button" aria-label="Previous therapist" id="therapistPrev">
+        <img src="assets/icon-carousel-arrow-left.svg" alt="" width="16" height="16">
+      </button>
+
+      <div class="therapist__col" id="therapistCol">
+
+        <div class="therapist__slide is-active" data-index="0">
+          <div class="therapist__photo therapist__photo--subtle" data-reveal-photo>
+            <img src="assets/melanie.jpg" alt="Melanie, an Aligned therapist">
+          </div>
+          <div class="therapist__progress">
+            <span class="therapist__progress-index">01 / 03</span>
+            <span class="therapist__progress-track">
+              <span class="therapist__progress-dot therapist__progress-dot--active"></span>
+              <span class="therapist__progress-dot"></span>
+              <span class="therapist__progress-dot"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="therapist__slide" data-index="1">
+          <div class="therapist__photo therapist__photo--brand" data-reveal-photo>
+            <img src="assets/yasmin-feature.jpg" alt="Yasmin, an Aligned therapist" style="object-position:center 22%;">
+          </div>
+          <div class="therapist__progress">
+            <span class="therapist__progress-index">02 / 03</span>
+            <span class="therapist__progress-track">
+              <span class="therapist__progress-dot"></span>
+              <span class="therapist__progress-dot therapist__progress-dot--active"></span>
+              <span class="therapist__progress-dot"></span>
+            </span>
+          </div>
+        </div>
+
+        <div class="therapist__slide" data-index="2">
+          <div class="therapist__photo therapist__photo--brand" data-reveal-photo>
+            <img src="assets/reuben-feature.jpg" alt="Reuben, an Aligned therapist" style="object-position:center 20%;">
+          </div>
+          <div class="therapist__progress">
+            <span class="therapist__progress-index">03 / 03</span>
+            <span class="therapist__progress-track">
+              <span class="therapist__progress-dot"></span>
+              <span class="therapist__progress-dot"></span>
+              <span class="therapist__progress-dot therapist__progress-dot--active"></span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="therapist__body" id="therapistBody" data-reveal>
+        <p class="type-label therapist__eyebrow">Meet some of our therapists</p>
+
+        <div class="therapist__copy is-active" data-index="0">
+          <h2 class="type-heading-section therapist__name">Melanie</h2>
+          <p class="type-body-default therapist__meta">Oxford · In person and online · From £60</p>
+          <p class="type-heading-editorial therapist__quote">&ldquo;Warm, practical therapy for anxiety, relationships and periods of change.&rdquo;</p>
+          <p class="type-body-default therapist__bio">Melanie is a BACP-registered therapist with over 8 years' experience supporting adults through anxiety, relationship difficulties, low mood and periods of change.</p>
+          <a class="link-arrow" href="#">View profile <img src="assets/icon-arrow-right.svg" alt="" width="18" height="18"></a>
+        </div>
+
+        <div class="therapist__copy" data-index="1">
+          <h2 class="type-heading-section therapist__name">Yasmin</h2>
+          <p class="type-body-default therapist__meta">Bristol · In person · From £60</p>
+          <p class="type-heading-editorial therapist__quote">&ldquo;Warm, practical therapy for anxiety, relationships and periods of change.&rdquo;</p>
+          <p class="type-body-default therapist__bio">Yasmin is a BACP-registered therapist with over 8 years' experience supporting adults through anxiety, relationship difficulties, low mood and periods of change.</p>
+          <a class="link-arrow" href="#">View profile <img src="assets/icon-arrow-right.svg" alt="" width="18" height="18"></a>
+        </div>
+
+        <div class="therapist__copy" data-index="2">
+          <h2 class="type-heading-section therapist__name">Reuben</h2>
+          <p class="type-body-default therapist__meta">Online · From £69</p>
+          <p class="type-heading-editorial therapist__quote">&ldquo;Warm, practical therapy for anxiety, relationships and periods of change.&rdquo;</p>
+          <p class="type-body-default therapist__bio">Reuben is a BACP-registered therapist with over 8 years' experience supporting adults through anxiety, relationship difficulties, low mood and periods of change.</p>
+          <a class="link-arrow" href="#">View profile <img src="assets/icon-arrow-right.svg" alt="" width="18" height="18"></a>
+        </div>
+      </div>
+
+      <button class="carousel-arrow carousel-arrow--right" type="button" aria-label="Next therapist" id="therapistNext">
+        <img src="assets/icon-carousel-arrow-left.svg" alt="" width="16" height="16" class="carousel-arrow__icon--flip">
+      </button>
+     </div>
+    </section>
+
+    <!-- ================= WHAT OUR CLIENTS SAY ================= -->
+    <section class="section testimonials">
+      <h2 class="type-heading-section testimonials__heading" data-reveal>What our clients say</h2>
+      <div class="testimonials__grid">
+        <div class="testimonial-card" data-reveal>
+          <span class="testimonial-card__mark">&ldquo;</span>
+          <p class="type-heading-editorial testimonial-card__quote">I was pleasantly surprised at how smooth the online experience was. The questions felt spot-on, and the answers were encouraging in a way that made me feel acknowledged and understood.</p>
+          <p class="type-body-default testimonial-card__name">Anna, 32, Oxford</p>
+          <div class="testimonial-card__avatar"><img src="assets/testimonial-avatar.jpg" alt=""></div>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <span class="testimonial-card__mark">&ldquo;</span>
+          <p class="type-heading-editorial testimonial-card__quote">I'd tried therapy twice in my early 20s and decided it wasn't for me. Turns out, I hadn't found a therapist I clicked with. Now that I have, I'm so much happier and more confident than ever before.</p>
+          <p class="type-body-default testimonial-card__name">William, 29, Bristol</p>
+          <div class="testimonial-card__avatar"><img src="assets/testimonial-avatar.jpg" alt=""></div>
+        </div>
+        <div class="testimonial-card" data-reveal>
+          <span class="testimonial-card__mark">&ldquo;</span>
+          <p class="type-heading-editorial testimonial-card__quote">I'd tried therapy twice in my early 20s and decided it wasn't for me. Turns out, I hadn't found a therapist I clicked with. Now that I have, I'm so much happier and more confident than ever before.</p>
+          <p class="type-body-default testimonial-card__name">William, 29, London</p>
+          <div class="testimonial-card__avatar"><img src="assets/testimonial-avatar.jpg" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ + CTA + FOOTER ================= -->
+    <section class="section faq" id="faq">
+      <div class="faq__inner">
+        <h2 class="type-heading-section-32 faq__heading" data-reveal>Questions</h2>
+        <div class="faq__list">
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">Is the matching service really free?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">Yes — matching is free. We're paid by our therapist network, not by you.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">What's the difference between therapy and counselling?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">In practice, not much. We match you on fit, not the label.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">How much does therapy cost?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">Typically £40–£120 per session, depending on the therapist. Tell us your budget and we'll match within it.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">What if I don't like my match?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">Tell us what wasn't right and we'll find someone better suited — no awkward conversations.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">What if I do a few sessions and want to change therapist?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">Completely normal. Let us know and we'll rematch you.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">Can I see someone in-person?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">Yes — across Bristol, Oxford &amp; Oxfordshire, and online UK-wide.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">Can you help if I have no idea what I'm looking for?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">That's most people. Tell us what's going on and we'll work out the rest.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">Can you help if I know exactly what I'm looking for?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">Yes — tell us and we'll match you as precisely as we can.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" type="button" aria-expanded="false">
+              <span class="type-body-default">How soon can I start?</span>
+              <img class="faq-item__icon" src="assets/icon-plus.svg" alt="" width="20" height="20">
+            </button>
+            <div class="faq-item__panel"><p class="type-body-default">Most people are matched within 48 hours.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta" id="cta">
+        <h2 class="type-display-cta cta__heading" data-reveal>Ready to find your therapist?</h2>
+        <p class="type-body-lead cta__copy" data-reveal>It takes 10 minutes, it's free, and there's no commitment.</p>
+        <a class="btn btn--primary-inverse" href="#hero" data-reveal>Find my therapist</a>
+      </div>
+
+      <footer class="site-footer">
+        <div class="site-footer__main">
+          <div class="site-footer__brand">
+            <p class="site-footer__logo">Aligned Therapy</p>
+            <p class="type-body-lead site-footer__tag">Find a therapist that fits.</p>
+            <p class="type-label site-footer__disclaimer">Aligned matches clients with independent, registered therapists across the UK. We are not a therapy provider.</p>
+          </div>
+          <div class="site-footer__links">
+            <div class="site-footer__col">
+              <p class="type-label site-footer__col-heading">Therapy by region</p>
+              <a href="#">Oxford &amp; Oxfordshire</a>
+              <a href="#">Bristol</a>
+              <a href="#">Online</a>
+            </div>
+            <div class="site-footer__col">
+              <p class="type-label site-footer__col-heading">Clients</p>
+              <a href="#how-it-works">How it works</a>
+              <a href="#">What is therapy?</a>
+              <a href="#faq">Client FAQs</a>
+              <a href="#">Client terms of service</a>
+              <a href="#">Crisis resources</a>
+            </div>
+            <div class="site-footer__col">
+              <p class="type-label site-footer__col-heading">Therapists</p>
+              <a href="#">Therapist sign-up</a>
+              <a href="#">Therapist terms of service</a>
+            </div>
+            <div class="site-footer__col">
+              <p class="type-label site-footer__col-heading">Company</p>
+              <a href="#">About Aligned</a>
+              <a href="#">Contact us</a>
+              <a href="#">Privacy policy</a>
+              <a href="#">Website terms of use</a>
+              <a href="#">Corrections</a>
+              <a href="#">Unfiltered (blog)</a>
+            </div>
+          </div>
+        </div>
+        <div class="site-footer__rule"></div>
+        <div class="site-footer__legal">
+          <p>Aligned Therapy Ltd. Registered at 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ. Company number 16829944.</p>
+          <p>© 2026 Aligned. All rights reserved.</p>
+        </div>
+      </footer>
+    </section>
+
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
