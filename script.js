@@ -73,10 +73,9 @@
   /* ---------------------------------------------------------------- */
   var revealSelectors = [
     '.how-it-works__heading', '.stats__intro', '.stats__quote', '.comparison__heading',
-    '.comparison__table', '.comparison-mobile', '.comparison__aligned-col', '.bristol__header', '.bristol__card', '.therapist__body',
+    '.comparison__table', '.comparison__aligned-col', '.bristol__header', '.bristol__card', '.therapist__body',
     '.testimonials__heading', '.testimonial-card', '.faq__heading',
-    '.cta__heading', '.cta__copy', '.cta .btn',
-    '.hiw-mobile__step', '.why-mobile__heading', '.why-mobile__card'
+    '.cta__heading', '.cta__copy', '.cta .btn'
   ];
   var revealTargets = document.querySelectorAll(revealSelectors.join(','));
   if (prefersReduced) {
@@ -318,7 +317,6 @@
     }
 
     function update() {
-      if (getComputedStyle(pin).display === 'none') return; // desktop-only engine; mobile uses static reveal instead
       var rect = pin.getBoundingClientRect();
       var stickyEl = pin.querySelector('.hiw-sticky');
       var stickyH = stickyEl.offsetHeight;
