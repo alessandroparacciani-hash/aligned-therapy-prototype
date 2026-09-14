@@ -370,7 +370,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .stats__cards{ flex:1; display:flex; gap:48px; align-items:flex-start; }
 .stats__card{ flex:1; background:rgba(255,255,255,0.95); border-radius:16px; padding:40px 24px; }
 .stats__card--stat{ display:flex; flex-direction:column; gap:32px; height:368px; }
-.stats__card--chart{ height:400px; margin-top:40px; padding-top:48px; padding-bottom:48px; display:flex; flex-direction:column; justify-content:flex-end; gap:48px; }
+.stats__card--chart{ height:400px; margin-top:40px; padding:40px 24px; display:flex; flex-direction:column; gap:48px; }
 .stats__number{ color:var(--text-brand); text-align:center;
   opacity:0; transform:translateY(8px) scale(.985); transition:opacity var(--motion-large) var(--ease-aligned), transform var(--motion-large) var(--ease-aligned); }
 .stats__card--stat.is-in .stats__number{ opacity:1; transform:translateY(0) scale(1); }
@@ -473,15 +473,16 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .bristol__copy{ margin-top:32px; color:var(--text-secondary); }
 .bristol__cards{ display:flex; gap:48px; max-width:var(--content-w); margin:0 auto; width:100%; }
 .bristol__card{
-  flex:1; background:var(--surface-subtle); border-radius:16px; padding:32px; height:400px;
-  display:flex; flex-direction:column; gap:32px;
+  flex:1; background:var(--surface-subtle); border-radius:16px; padding:24px 32px 32px; height:400px;
+  display:flex; flex-direction:column; gap:20px;
   opacity:0; transform:translateY(14px); transition:opacity var(--motion-reveal) var(--ease-aligned), transform var(--motion-reveal) var(--ease-aligned);
 }
 .bristol__card.is-in{ opacity:1; transform:translateY(0); }
 .bristol__cards .bristol__card:nth-child(2){ background:var(--surface-muted); transition-delay:100ms; }
 .bristol__cards .bristol__card:nth-child(3){ transition-delay:200ms; }
+.bristol__icon{ width:24px; height:24px; }
 .bristol__label{ font-family:var(--font-sans); font-weight:500; font-size:14px; line-height:17px; color:var(--text-primary); }
-.bristol__list{ display:flex; flex-direction:column; gap:4px; margin-top:12px; }
+.bristol__list{ display:flex; flex-direction:column; gap:4px; }
 .bristol__list li{ display:flex; align-items:center; gap:12px; padding:2px 0; font-family:var(--font-sans); font-size:20px; line-height:26px; color:var(--text-primary); }
 
 /* ---------------------------------------------------------------------- */
