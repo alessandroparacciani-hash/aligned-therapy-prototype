@@ -370,7 +370,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .stats__cards{ flex:1; display:flex; gap:48px; align-items:flex-start; }
 .stats__card{ flex:1; background:rgba(255,255,255,0.95); border-radius:16px; padding:40px 24px; }
 .stats__card--stat{ display:flex; flex-direction:column; gap:32px; height:368px; }
-.stats__card--chart{ height:400px; margin-top:40px; padding-top:48px; padding-bottom:48px; display:flex; flex-direction:column; justify-content:flex-end; gap:48px; }
+.stats__card--chart{ height:400px; margin-top:40px; padding:40px 24px; display:flex; flex-direction:column; gap:48px; }
 .stats__number{ color:var(--text-brand); text-align:center;
   opacity:0; transform:translateY(8px) scale(.985); transition:opacity var(--motion-large) var(--ease-aligned), transform var(--motion-large) var(--ease-aligned); }
 .stats__card--stat.is-in .stats__number{ opacity:1; transform:translateY(0) scale(1); }
@@ -474,14 +474,15 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .bristol__cards{ display:flex; gap:48px; max-width:var(--content-w); margin:0 auto; width:100%; }
 .bristol__card{
   flex:1; background:var(--surface-subtle); border-radius:16px; padding:32px; height:400px;
-  display:flex; flex-direction:column; gap:32px;
+  display:flex; flex-direction:column; gap:20px;
   opacity:0; transform:translateY(14px); transition:opacity var(--motion-reveal) var(--ease-aligned), transform var(--motion-reveal) var(--ease-aligned);
 }
 .bristol__card.is-in{ opacity:1; transform:translateY(0); }
 .bristol__cards .bristol__card:nth-child(2){ background:var(--surface-muted); transition-delay:100ms; }
 .bristol__cards .bristol__card:nth-child(3){ transition-delay:200ms; }
+.bristol__icon{ width:24px; height:24px; }
 .bristol__label{ font-family:var(--font-sans); font-weight:500; font-size:14px; line-height:17px; color:var(--text-primary); }
-.bristol__list{ display:flex; flex-direction:column; gap:4px; margin-top:12px; }
+.bristol__list{ display:flex; flex-direction:column; gap:4px; }
 .bristol__list li{ display:flex; align-items:center; gap:12px; padding:2px 0; font-family:var(--font-sans); font-size:20px; line-height:26px; color:var(--text-primary); }
 
 /* ---------------------------------------------------------------------- */
@@ -607,6 +608,169 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .site-footer__rule{ height:1px; background:var(--border-default); opacity:.25; max-width:var(--content-w); margin:0 auto; width:100%; }
 .site-footer__legal{ display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; max-width:var(--content-w); margin:0 auto; width:100%; }
 .site-footer__legal p{ font-family:var(--font-sans); font-size:14px; line-height:19px; color:var(--text-inverse); opacity:.7; }
+
+/* ---------------------------------------------------------------------- */
+/* Mobile-only markup — hidden on desktop by default                       */
+/* ---------------------------------------------------------------------- */
+.hero__meta--mobile{ display:none; }
+.hiw-mobile{ display:none; }
+.why-mobile{ display:none; }
+.comparison-mobile{ display:none; }
+
+/* =========================================================================
+   MOBILE — Figma "Home - v5 - 4 Sep" mobile frame (390px), node 1042:12891.
+   Several sections use a genuinely different layout on mobile rather than a
+   simple reflow (How It Works, Why We Chose / Bristol, Comparison), and the
+   section order itself differs — handled here via flex `order` on `.page`'s
+   direct children rather than reordering the DOM.
+   ========================================================================= */
+@media (max-width: 767px){
+
+  /* ---- Page frame: sections abut edge-to-edge with dividers, no rounded-card gaps ---- */
+  .page{ padding:0; gap:0; }
+  .section{ border-radius:0; }
+
+  /* ---- Section order: Hero, How It Works, Why We Chose, Stats, Comparison, Testimonials, FAQ ---- */
+  .hero{ order:1; }
+  .how-it-works{ order:2; }
+  .bristol{ order:3; border-top:1px solid var(--border-subtle); }
+  .stats{ order:4; }
+  .comparison{ order:5; }
+  .therapist{ display:none; } /* not present in the mobile frame */
+  .testimonials{ order:6; border-top:1px solid var(--border-subtle); }
+  .faq{ order:7; border-top:1px solid var(--border-subtle); }
+
+  /* ---- Header ---- */
+  .site-header{ height:56px; }
+  .site-header__logo{ font-size:20px; font-weight:500; letter-spacing:0; line-height:normal; }
+  .site-header.is-scrolled .site-header__logo{ font-weight:400; }
+
+  /* ---- Slide-out nav menu ---- */
+  .nav-menu{ width:100%; max-width:100%; }
+  .nav-menu__body{ padding:96px 24px 48px; gap:var(--sp-40); }
+  .nav-menu__primary-link{ font-size:28px; line-height:1.15; }
+  .nav-menu__secondary{ width:100%; }
+
+  /* ---- Hero ---- */
+  .hero{ height:725px; }
+  .hero__spacer{ height:56px; }
+  .hero__content{
+    position:absolute; top:221px; left:24px; right:24px;
+    width:auto; max-width:none; margin:0; flex:none; padding:0;
+  }
+  .hero__title{ font-size:40px; line-height:43px; letter-spacing:-0.4px; }
+  .hero__lede{ max-width:none; }
+  .hero__actions-wrap{ gap:16px; }
+  .hero__actions{ gap:24px; }
+  .hero__actions-note{ font-weight:500; font-size:14px; line-height:17px; }
+  .hero__meta{ max-width:none; }
+  .hero__meta--desktop{ display:none; }
+  .hero__meta--mobile{ display:block; }
+
+  /* ---- How It Works: pinned card-stack scrub is desktop-only; mobile stacks
+     each step's heading/copy above its card in normal flow, with a fade-up
+     scroll reveal per step instead of the scrubbed stack animation. ---- */
+  .how-it-works{ padding:64px 24px; }
+  .how-it-works__intro{ padding-top:0; text-align:left; max-width:none; }
+  .hiw-pin{ display:none; }
+  .hiw-mobile{ display:flex; flex-direction:column; gap:32px; margin-top:32px; }
+  .hiw-mobile__step{
+    display:flex; flex-direction:column; gap:16px;
+    opacity:0; transform:translateY(14px);
+    transition:opacity var(--motion-reveal) var(--ease-aligned), transform var(--motion-reveal) var(--ease-aligned);
+  }
+  .hiw-mobile__step.is-in{ opacity:1; transform:translateY(0); }
+  .hiw-mobile .hiw-copy__kicker{ font-size:20px; line-height:26px; white-space:normal; }
+  .hiw-card--mobile{ position:static; width:100%; height:auto; min-height:238px; transform:none; padding:22px; }
+  .hiw-review, .hiw-chat{ height:auto; }
+  .hiw-chat__bubble{ max-width:none; white-space:normal !important; }
+  .hiw-diagram{ flex-wrap:wrap; row-gap:16px; }
+
+  /* ---- Stats: intro, then a single 32px-rhythm stack of stat/chart/quote cards ---- */
+  .stats{ padding:56px 24px; gap:0; }
+  .stats__top{ flex-direction:column; gap:64px; }
+  .stats__intro{ width:100%; }
+  .stats__cards{ flex-direction:column; width:100%; gap:32px; }
+  .stats__card{ width:100%; }
+  .stats__card--stat{ height:auto; }
+  .stats__card--chart{ height:auto; margin-top:0; padding:40px 24px; }
+  .stats__quote-wrap{ max-width:none; margin-top:32px; }
+  .stats__quote{
+    position:static; width:100%; margin-left:0; height:auto;
+    display:flex; flex-direction:column; padding-bottom:24px; overflow:hidden;
+  }
+  .stats__quote-photo{ position:static; width:100%; height:300px; border-radius:16px 16px 0 0; }
+  .stats__quote-body{ position:static; width:100%; padding:20px 24px 0; gap:20px; }
+  .stats__quote-text{ display:block; gap:0; }
+  .stats__quote-mark{ float:left; font-size:40px; line-height:1; margin-right:8px; }
+  .stats__quote-text p{ display:inline; }
+  .stats__quote-attribution{ margin-left:0; gap:16px; clear:both; padding-top:16px; }
+  .stats__quote-role{ font-weight:300; }
+
+  /* ---- Comparison: editorial stacked list, not the side-by-side table ---- */
+  .comparison{ padding:64px 24px; }
+  .comparison__table{ display:none; }
+  .comparison-mobile{ display:block; margin-top:40px; text-align:left; }
+  .comparison-mobile__row{ padding:20px 0; border-bottom:1px solid var(--border-subtle); display:flex; flex-direction:column; gap:8px; }
+  .comparison-mobile__row--last{ border-bottom:none; }
+  .comparison-mobile__row:first-child{ padding-top:0; }
+  .comparison-mobile__label{ font-family:var(--font-sans); font-weight:500; font-size:12px; line-height:15px; letter-spacing:0.144px; color:var(--text-subtle); }
+  .comparison-mobile__answer{ display:flex; align-items:center; gap:10px; }
+  .comparison-mobile__mark{ width:24px; height:24px; border-radius:999px; background:var(--surface-brand); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .comparison-mobile__value{ font-family:var(--font-serif); font-weight:400; font-size:20px; line-height:25px; letter-spacing:-0.04px; color:var(--text-primary); }
+  .comparison-mobile__vs{ padding-left:34px; font-family:var(--font-sans); font-size:14px; line-height:19px; color:var(--text-secondary); }
+
+  /* ---- Bristol (desktop) hidden / Why We Chose (mobile): different heading,
+     no subcopy, bordered icon cards on a plain white background, added CTA ---- */
+  .bristol{ padding:64px 24px; }
+  .bristol__header, .bristol__cards{ display:none; }
+  .why-mobile{ display:flex; flex-direction:column; gap:40px; }
+  .why-mobile__heading{ color:var(--text-primary);
+    opacity:0; transform:translateY(10px); transition:opacity var(--motion-reveal) var(--ease-aligned), transform var(--motion-reveal) var(--ease-aligned); }
+  .why-mobile__heading.is-in{ opacity:1; transform:translateY(0); }
+  .why-mobile__cards{ display:flex; flex-direction:column; gap:24px; }
+  .why-mobile__card{
+    border:1px solid var(--border-default); border-radius:16px; padding:20px;
+    display:flex; flex-direction:column; gap:24px;
+    opacity:0; transform:translateY(14px); transition:opacity var(--motion-reveal) var(--ease-aligned), transform var(--motion-reveal) var(--ease-aligned);
+  }
+  .why-mobile__card.is-in{ opacity:1; transform:translateY(0); }
+  .why-mobile__cards .why-mobile__card:nth-child(2){ transition-delay:100ms; }
+  .why-mobile__cards .why-mobile__card:nth-child(3){ transition-delay:200ms; }
+  .why-mobile__label{ font-family:var(--font-sans); font-weight:500; font-size:14px; line-height:17px; color:var(--text-primary); }
+  .why-mobile__list{ display:flex; flex-direction:column; gap:4px; margin-top:12px; }
+  .why-mobile__list li{ display:flex; align-items:center; gap:12px; padding:2px 0; font-family:var(--font-sans); font-size:20px; line-height:26px; color:var(--text-primary); }
+  .why-mobile__list--icons li{ align-items:flex-start; }
+  .why-mobile__list--icons li img{ margin-top:5px; flex-shrink:0; }
+  .why-mobile__btn{ align-self:flex-start; }
+
+  /* ---- Testimonials: single card, no carousel arrows, plain-body quote ---- */
+  .testimonials{ padding:48px 24px; }
+  .testimonials__grid{ margin-top:24px; flex-direction:column; }
+  .testimonials__grid .testimonial-card:nth-child(n+2){ display:none; }
+  .testimonial-card{ background:rgba(92,89,82,0.05); padding:16px; height:300px; justify-content:center; }
+  .testimonial-card__mark{ font-size:44px; }
+  .testimonial-card__quote{ font-family:var(--font-sans); font-style:normal; font-weight:400; font-size:16px; line-height:23px; }
+  .testimonial-card__avatar{ width:56px; height:56px; }
+
+  /* ---- FAQ ---- */
+  .faq__inner{ flex-direction:column; gap:24px; padding:48px 24px 0; max-width:none; }
+  .faq__heading{ width:100%; padding-top:0; }
+  .faq__list{ max-width:none; }
+
+  /* ---- CTA ---- */
+  .cta{ height:auto; margin-top:0; padding:48px 24px; gap:32px; }
+  .cta__heading{ font-size:40px; line-height:43px; letter-spacing:-0.4px; max-width:none; }
+  .cta__copy{ max-width:none; }
+
+  /* ---- Footer ---- */
+  .site-footer{ padding:48px 24px; }
+  .site-footer__main{ flex-direction:column; gap:32px; }
+  .site-footer__brand{ max-width:none; }
+  .site-footer__links{ flex-wrap:wrap; gap:32px 24px; }
+  .site-footer__col{ flex:0 0 calc(50% - 12px); }
+  .site-footer__legal{ flex-direction:column; }
+}
 
 /* ---------------------------------------------------------------------- */
 /* Reduced motion — page fully usable, content simply appears              */
